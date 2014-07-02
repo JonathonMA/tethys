@@ -7,11 +7,11 @@ require "tethys/version"
 Gem::Specification.new do |s|
   s.name        = "tethys"
   s.version     = Tethys::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Tethys."
-  s.description = "TODO: Description of Tethys."
+  s.authors     = ["Jonathon M. Abbott"]
+  s.email       = ["jma@dandaraga.net"]
+  s.homepage    = "https://github.com/JonathonMA/tethys"
+  s.summary     = "an SQL Event store"
+  s.description = s.summary
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
