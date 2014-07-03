@@ -10,6 +10,9 @@ module Tethys
       # TODO: Move this into an evaluation context, instead of polluting the
       # aggregate.
       def on name, *attrs, &block
+        if attrs.first.is_a? Hash
+          attrs = attrs.first.keys
+        end
         struct = Struct.new(name.to_s.camelize, *attrs) do
           singleton_class.class_eval do
             define_method :applicator do
