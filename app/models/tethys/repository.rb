@@ -26,13 +26,7 @@ module Tethys
     def load(id)
       aggregate = Aggregate.find_by! id: id
 
-      root = aggregate.aggregate_class.new
-      root = aggregate.aggregate_class.new
-      root.instance_variable_set :@id, id
-      root.load_from_history(aggregate.events)
-      # TODO: Update root version
-
-      root
+      aggregate.current_root
     end
   end
 end

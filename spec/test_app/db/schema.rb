@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702100305) do
+ActiveRecord::Schema.define(version: 20140703104122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,5 +31,15 @@ ActiveRecord::Schema.define(version: 20140702100305) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tethys_snapshots", force: true do |t|
+    t.integer  "aggregate_id"
+    t.text     "data"
+    t.integer  "version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tethys_snapshots", ["aggregate_id"], name: "index_tethys_snapshots_on_aggregate_id", using: :btree
 
 end
